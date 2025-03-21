@@ -1,0 +1,217 @@
+/* Fullscreen fixed background */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: url("assets/2.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+    
+
+}
+body.fade-in {
+    opacity: 1;
+}
+nav {
+    background: rgb(0, 0, 0);
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+/* Logo Style */
+.logo {
+    font-size: 34px;
+    font-weight: bold;
+    color: white;
+    margin-left: 20px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+
+nav ul {
+    list-style: none;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    
+}
+nav ul li a:hover {
+    color: #0c00eb; /* Highlight color */
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+#container {
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+}
+nav {
+    background: rgb(0, 0, 0);
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    font-size: 24px;
+}
+/* Full-screen WebGL container */
+#webgl-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Keeps it behind content */
+}
+
+/* Scrollable Content */
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
+
+
+/* Boxes for sections */
+.box {
+    width: 80%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+
+
+
+#webgl-container {
+    width: 100vw;
+    height: 80vh;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 14s linear infinite;
+}
+
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    }
+    to{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+.banner .slider .item {
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+        
+}
+.banner .slider .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+
+/* Full-Screen Loader */
+#loader {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Neon Text */
+.neon-text {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #00f, 0 0 20px #00f;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+/* Neon Flickering Animation */
+@keyframes neonGlow {
+    0% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #00f, 0 0 20px #00f; }
+    100% { text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #00f, 0 0 40px #00f; }
+}
+/* Dancing Animation */
+@keyframes dance {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Apply Dance Animation to Everything */
+
+h1, h2, p, 
+nav ul li, 
+#webgl-container, 
+.banner .slider .item img, 
+.neon-text {
+    animation: dance 0.36s infinite ease-in-out;
+}
+
+/* Rotate and Scale for More Fun */
+@keyframes danceRotate {
+    0% { transform: rotate(0) scale(1); }
+    50% { transform: rotate(1deg) scale(1.5); }
+    100% { transform: rotate(0) scale(1); }
+}
+
+
+
